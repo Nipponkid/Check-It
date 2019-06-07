@@ -10,7 +10,18 @@
 		1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */; };
 		1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B622A5C4E200E0E20B /* Assets.xcassets */; };
 		1BFF77BA22A5C4E200E0E20B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B822A5C4E200E0E20B /* MainMenu.xib */; };
+		1BFF780822AB269100E0E20B /* Check_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF780722AB269100E0E20B /* Check_ItTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BFF780A22AB269100E0E20B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BFF77A922A5C4E000E0E20B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BFF77B022A5C4E000E0E20B;
+			remoteInfo = "Check-It";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1BFF77B122A5C4E000E0E20B /* Check-It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +30,20 @@
 		1BFF77B922A5C4E200E0E20B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1BFF77BB22A5C4E200E0E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Check_It.entitlements; sourceTree = "<group>"; };
+		1BFF780522AB269100E0E20B /* Check-ItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check-ItTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BFF780722AB269100E0E20B /* Check_ItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check_ItTests.swift; sourceTree = "<group>"; };
+		1BFF780922AB269100E0E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1BFF77AE22A5C4E000E0E20B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BFF780222AB269100E0E20B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				1BFF77B322A5C4E000E0E20B /* Check-It */,
+				1BFF780622AB269100E0E20B /* Check-ItTests */,
 				1BFF77B222A5C4E000E0E20B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				1BFF77B122A5C4E000E0E20B /* Check-It.app */,
+				1BFF780522AB269100E0E20B /* Check-ItTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +81,15 @@
 				1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */,
 			);
 			path = "Check-It";
+			sourceTree = "<group>";
+		};
+		1BFF780622AB269100E0E20B /* Check-ItTests */ = {
+			isa = PBXGroup;
+			children = (
+				1BFF780722AB269100E0E20B /* Check_ItTests.swift */,
+				1BFF780922AB269100E0E20B /* Info.plist */,
+			);
+			path = "Check-ItTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +112,24 @@
 			productReference = 1BFF77B122A5C4E000E0E20B /* Check-It.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1BFF780422AB269100E0E20B /* Check-ItTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BFF780E22AB269100E0E20B /* Build configuration list for PBXNativeTarget "Check-ItTests" */;
+			buildPhases = (
+				1BFF780122AB269100E0E20B /* Sources */,
+				1BFF780222AB269100E0E20B /* Frameworks */,
+				1BFF780322AB269100E0E20B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BFF780B22AB269100E0E20B /* PBXTargetDependency */,
+			);
+			name = "Check-ItTests";
+			productName = "Check-ItTests";
+			productReference = 1BFF780522AB269100E0E20B /* Check-ItTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +142,10 @@
 				TargetAttributes = {
 					1BFF77B022A5C4E000E0E20B = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					1BFF780422AB269100E0E20B = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 1BFF77B022A5C4E000E0E20B;
 					};
 				};
 			};
@@ -109,6 +163,7 @@
 			projectRoot = "";
 			targets = (
 				1BFF77B022A5C4E000E0E20B /* Check-It */,
+				1BFF780422AB269100E0E20B /* Check-ItTests */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +178,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1BFF780322AB269100E0E20B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -134,7 +196,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1BFF780122AB269100E0E20B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BFF780822AB269100E0E20B /* Check_ItTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BFF780B22AB269100E0E20B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BFF77B022A5C4E000E0E20B /* Check-It */;
+			targetProxy = 1BFF780A22AB269100E0E20B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1BFF77B822A5C4E200E0E20B /* MainMenu.xib */ = {
@@ -301,6 +379,46 @@
 			};
 			name = Release;
 		};
+		1BFF780C22AB269100E0E20B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W6Y5Q44XNS;
+				INFOPLIST_FILE = "Check-ItTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.allegory.Check-ItTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Check-It.app/Contents/MacOS/Check-It";
+			};
+			name = Debug;
+		};
+		1BFF780D22AB269100E0E20B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W6Y5Q44XNS;
+				INFOPLIST_FILE = "Check-ItTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.allegory.Check-ItTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Check-It.app/Contents/MacOS/Check-It";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -318,6 +436,15 @@
 			buildConfigurations = (
 				1BFF77C022A5C4E200E0E20B /* Debug */,
 				1BFF77C122A5C4E200E0E20B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BFF780E22AB269100E0E20B /* Build configuration list for PBXNativeTarget "Check-ItTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BFF780C22AB269100E0E20B /* Debug */,
+				1BFF780D22AB269100E0E20B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
