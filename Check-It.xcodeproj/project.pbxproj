@@ -10,7 +10,6 @@
 		1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */; };
 		1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B622A5C4E200E0E20B /* Assets.xcassets */; };
 		1BFF77BA22A5C4E200E0E20B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B822A5C4E200E0E20B /* MainMenu.xib */; };
-		1BFF780822AB269100E0E20B /* Check_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF780722AB269100E0E20B /* Check_ItTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +30,6 @@
 		1BFF77BB22A5C4E200E0E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Check_It.entitlements; sourceTree = "<group>"; };
 		1BFF780522AB269100E0E20B /* Check-ItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check-ItTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BFF780722AB269100E0E20B /* Check_ItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check_ItTests.swift; sourceTree = "<group>"; };
-		1BFF780922AB269100E0E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				1BFF77B322A5C4E000E0E20B /* Check-It */,
-				1BFF780622AB269100E0E20B /* Check-ItTests */,
 				1BFF77B222A5C4E000E0E20B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,15 +77,6 @@
 				1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */,
 			);
 			path = "Check-It";
-			sourceTree = "<group>";
-		};
-		1BFF780622AB269100E0E20B /* Check-ItTests */ = {
-			isa = PBXGroup;
-			children = (
-				1BFF780722AB269100E0E20B /* Check_ItTests.swift */,
-				1BFF780922AB269100E0E20B /* Info.plist */,
-			);
-			path = "Check-ItTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFF780822AB269100E0E20B /* Check_ItTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +334,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W6Y5Q44XNS;
+				DEVELOPMENT_TEAM = FPVT6LW728;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,7 +353,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W6Y5Q44XNS;
+				DEVELOPMENT_TEAM = FPVT6LW728;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
