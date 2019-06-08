@@ -12,17 +12,37 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    let popover = NSPopover()
     
-    
-
+    var menuBarWindowDisplayStatus : Bool = false
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
-            //button.action = #selector(printQuote(_:))
+            button.action = #selector(toggleMenuBarWindow(_:))
+            constructMenu()
         }
+        
+    }
+    
+    @objc func toggleMenuBarWindow(_ sender: Any?) {
+        menuBarWindowDisplayStatus = !menuBarWindowDisplayStatus
+        print("Menu Bar Toggled - Status \(menuBarWindowDisplayStatus)")
+    }
+    
+    @objc func displayTodoItems(_ sender: Any?) {
+        print("DISPLAYING!")
     }
 
+    func constructMenu() {
+        let menu = NSMenu()
+        
+        menu.addItem(NSMenuItem(title: "Show All To-Do Items", action: #selector(AppDelegate.displayTodoItems(_:)), keyEquivalent: "w"))
+        menu.addItem(NSMenuItem(title: "Quit Application", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        statusItem.menu = menu
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
