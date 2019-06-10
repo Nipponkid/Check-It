@@ -8,41 +8,32 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CheckitViewController" customModule="Check_It">
             <connections>
                 <outlet property="button" destination="FlI-Uj-9tV" id="aW2-fm-7RQ"/>
+                <outlet property="list" destination="MyY-jt-Nyh" id="6go-cC-WOq"/>
+                <outlet property="table" destination="Au8-8c-euL" id="Qpg-0E-AmK"/>
                 <outlet property="view" destination="c22-O7-iKe" id="hLW-ZX-Frl"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="216" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="287" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-Uj-9tV" userLabel="ExitButton">
-                    <rect key="frame" x="101" y="-7" width="121" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZEH-eS-2R8">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="closeProgram:" target="-2" id="Hdq-Y2-Hkn"/>
-                    </connections>
-                </button>
-                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-Cf-Ktr" userLabel="Task List">
-                    <rect key="frame" x="0.0" y="20" width="216" height="252"/>
+                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="51" horizontalPageScroll="10" verticalLineScroll="51" verticalPageScroll="10" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="1lv-Cf-Ktr" userLabel="Task List">
+                    <rect key="frame" x="0.0" y="20" width="287" height="252"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" ambiguous="YES" id="Ymc-7c-HU3">
-                        <rect key="frame" x="1" y="1" width="214" height="250"/>
+                        <rect key="frame" x="1" y="1" width="285" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Au8-8c-euL">
-                                <rect key="frame" x="0.0" y="0.0" width="214" height="250"/>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="49" rowSizeStyle="automatic" viewBased="YES" id="Au8-8c-euL">
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="211" minWidth="40" maxWidth="1000" id="MyY-jt-Nyh">
+                                    <tableColumn width="282" minWidth="40" maxWidth="1000" id="MyY-jt-Nyh">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -55,16 +46,33 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="fTa-IB-pX4">
-                                                <rect key="frame" x="1" y="1" width="211" height="17"/>
+                                            <tableCellView identifier="TaskItemView" id="fTa-IB-pX4">
+                                                <rect key="frame" x="1" y="1" width="282" height="49"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXO-Zf-F1h">
+                                                        <rect key="frame" x="-12" y="7" width="99" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Complete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MhY-Xu-buh">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-xk-5iF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="211" height="17"/>
+                                                        <rect key="frame" x="87" y="29" width="194" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="qtV-rG-7Li">
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Task Item" id="qtV-rG-7Li">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67K-uO-vuI">
+                                                        <rect key="frame" x="87" y="-9" width="194" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Task Description found here" id="caX-gz-Hmw">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
@@ -76,6 +84,10 @@
                                         </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="SLw-XK-IPX"/>
+                                    <outlet property="delegate" destination="-2" id="zsM-BH-aPY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                     </clipView>
@@ -89,18 +101,29 @@
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sO4-PX-vFm" userLabel="NewTaskButton">
-                    <rect key="frame" x="-6" y="-7" width="121" height="32"/>
+                    <rect key="frame" x="-6" y="-7" width="152" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="New Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mHj-nd-IC7">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="closeProgram:" target="-2" id="yEt-lQ-qLa"/>
+                        <action selector="createTask:" target="-2" id="g99-ha-0RQ"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-Uj-9tV" userLabel="ExitButton">
+                    <rect key="frame" x="134" y="-7" width="159" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZEH-eS-2R8">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="closeProgram:" target="-2" id="Hdq-Y2-Hkn"/>
                     </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="7" y="154"/>
+            <point key="canvasLocation" x="42.5" y="154"/>
         </customView>
     </objects>
 </document>

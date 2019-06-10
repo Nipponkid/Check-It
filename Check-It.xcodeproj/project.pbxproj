@@ -12,6 +12,7 @@
 		AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07438422AED78200C17649 /* CheckitViewController.swift */; };
 		AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438622AED84300C17649 /* CheckitViewController.xib */; };
 		AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438822AED8ED00C17649 /* MainMenu.xib */; };
+		ADD301BD22AEE85200754E5B /* TaskItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD301BC22AEE85200754E5B /* TaskItemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		AD07438422AED78200C17649 /* CheckitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckitViewController.swift; sourceTree = "<group>"; };
 		AD07438622AED84300C17649 /* CheckitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckitViewController.xib; sourceTree = "<group>"; };
 		AD07438822AED8ED00C17649 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		ADD301BC22AEE85200754E5B /* TaskItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskItemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				AD07438822AED8ED00C17649 /* MainMenu.xib */,
 				1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */,
 				AD07438622AED84300C17649 /* CheckitViewController.xib */,
+				ADD301BC22AEE85200754E5B /* TaskItemView.xib */,
 			);
 			path = "Check-It";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */,
 				1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */,
+				ADD301BD22AEE85200754E5B /* TaskItemView.xib in Resources */,
 				AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
