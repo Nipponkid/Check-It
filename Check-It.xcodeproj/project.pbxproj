@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */; };
 		1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B622A5C4E200E0E20B /* Assets.xcassets */; };
-		1BFF77BA22A5C4E200E0E20B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B822A5C4E200E0E20B /* MainMenu.xib */; };
+		AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07438422AED78200C17649 /* CheckitViewController.swift */; };
+		AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438622AED84300C17649 /* CheckitViewController.xib */; };
+		AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438822AED8ED00C17649 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,10 +28,12 @@
 		1BFF77B122A5C4E000E0E20B /* Check-It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BFF77B622A5C4E200E0E20B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1BFF77B922A5C4E200E0E20B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1BFF77BB22A5C4E200E0E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Check_It.entitlements; sourceTree = "<group>"; };
 		1BFF780522AB269100E0E20B /* Check-ItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check-ItTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD07438422AED78200C17649 /* CheckitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckitViewController.swift; sourceTree = "<group>"; };
+		AD07438622AED84300C17649 /* CheckitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckitViewController.xib; sourceTree = "<group>"; };
+		AD07438822AED8ED00C17649 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */,
+				AD07438422AED78200C17649 /* CheckitViewController.swift */,
 				1BFF77B622A5C4E200E0E20B /* Assets.xcassets */,
-				1BFF77B822A5C4E200E0E20B /* MainMenu.xib */,
 				1BFF77BB22A5C4E200E0E20B /* Info.plist */,
+				AD07438822AED8ED00C17649 /* MainMenu.xib */,
 				1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */,
+				AD07438622AED84300C17649 /* CheckitViewController.xib */,
 			);
 			path = "Check-It";
 			sourceTree = "<group>";
@@ -160,8 +166,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */,
 				1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */,
-				1BFF77BA22A5C4E200E0E20B /* MainMenu.xib in Resources */,
+				AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */,
 				1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,17 +207,6 @@
 			targetProxy = 1BFF780A22AB269100E0E20B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1BFF77B822A5C4E200E0E20B /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1BFF77B922A5C4E200E0E20B /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1BFF77BD22A5C4E200E0E20B /* Debug */ = {

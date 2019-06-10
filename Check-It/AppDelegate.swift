@@ -20,14 +20,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(toggleMenuBarWindow(_:))
-            constructMenu()
+            //constructMenu()
         }
-        
+        popover.contentViewController = CheckitViewController()
     }
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {
         menuBarWindowDisplayStatus = !menuBarWindowDisplayStatus
         print("Menu Bar Toggled - Status \(menuBarWindowDisplayStatus)")
+        if let button = statusItem.button {
+            if (!menuBarWindowDisplayStatus) {
+                popover.performClose(sender)
+            } else {
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            }
+        }
+        
     }
     
     @objc func displayTodoItems(_ sender: Any?) {
