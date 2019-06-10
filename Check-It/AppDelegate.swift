@@ -20,9 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(toggleMenuBarWindow(_:))
-            //constructMenu()
         }
         popover.contentViewController = CheckitViewController()
+        popover.behavior = NSPopover.Behavior.transient;
     }
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {
