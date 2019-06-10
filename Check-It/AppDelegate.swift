@@ -29,13 +29,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuBarWindowDisplayStatus = !menuBarWindowDisplayStatus
         print("Menu Bar Toggled - Status \(menuBarWindowDisplayStatus)")
         if let button = statusItem.button {
-            if (!menuBarWindowDisplayStatus) {
+            if (popover.isShown) {
                 popover.performClose(sender)
             } else {
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             }
         }
-        
     }
     
     @objc func displayTodoItems(_ sender: Any?) {
