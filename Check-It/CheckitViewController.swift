@@ -15,7 +15,10 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     @IBOutlet weak var list: NSTableColumn!
     @IBOutlet weak var table: NSTableView!
     
-    var rowCount = 2
+    var tasks: [Task] = [
+        Task(title: "First Task", description: "Yes really, the first one.")
+    ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +27,34 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
         table.dataSource = self
     }
     
+    // MARK: - NSTableViewDataSource
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return rowCount
+        return tasks.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("TaskItemView"), owner: nil) as? NSTableCellView {
-            if let textField = cell.textField {
-                textField.stringValue = "Anything I can think of now"
+        
+        if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("TodoTask"), owner: self) as? TaskTableCellView {
+            if let titleField = cell.taskTitleTextField {
+                titleField.stringValue = tasks[row].title
             }
+            if let descriptionField = cell.taskDescriptionTextField {
+                if let descriptionRaw = tasks[row].description {
+                    descriptionField.stringValue = descriptionRaw
+                }
+            }
+            
             return cell
         }
         return nil
+    }
+    
+    @IBAction func completeTask(_ sender: Any?) {
+        let selected = table.row(for: sender as! NSView)
+        print("Task \(tasks[selected].title) Complete")
+        tasks[selected].isComplete = true
+        tasks.remove(at: selected)
+        table.reloadData()
     }
     
     @IBAction func closeProgram(_ sender: Any?) {
@@ -43,7 +62,9 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     }
     
     @IBAction func createTask(_ sender: Any?) {
-        rowCount += 1
+        let temp = Task(title: "Testing Me! : \(tasks.count)", description: "This is a test thing")
+        
+        tasks.append(temp);
         table.reloadData()
     }
     

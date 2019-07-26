@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Task {
+struct Task {
     var title: String
     var description: String?
     var isComplete: Bool = false

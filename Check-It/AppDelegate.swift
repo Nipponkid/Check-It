@@ -13,8 +13,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
-    
-    var menuBarWindowDisplayStatus : Bool = false
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
@@ -26,8 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {
-        menuBarWindowDisplayStatus = !menuBarWindowDisplayStatus
-        print("Menu Bar Toggled - Status \(menuBarWindowDisplayStatus)")
         if let button = statusItem.button {
             if (popover.isShown) {
                 popover.performClose(sender)
