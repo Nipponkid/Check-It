@@ -33,9 +33,11 @@ class NewTaskViewController: NSViewController {
     
     @IBAction func createNewTask(_ sender: Any?) {
         let temp = Task(title: titleTextField.stringValue, description: descriptionTextField.stringValue)
-        tasks.append(temp)
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = CheckitViewController(for: tasks)
+        if temp.title != "" {
+            tasks.append(temp)
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            appDelegate.popover.contentViewController = CheckitViewController(for: tasks)
+        }
     }
     
 }
