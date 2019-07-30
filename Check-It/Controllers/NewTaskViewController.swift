@@ -12,10 +12,30 @@ class NewTaskViewController: NSViewController {
     
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var descriptionTextField: NSTextField!
+    
+    var tasks: [Task]
+    
+    init(for tasks: [Task]) {
+        self.tasks = tasks
+        print(tasks)
+        super.init(nibName: "NewTaskViewController", bundle: nil)
+    }
+    
+    required init?(coder aCoder: NSCoder) {
+        self.tasks = []
+        super.init(coder: aCoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    }
+    
+    @IBAction func createNewTask(_ sender: Any?) {
+        let temp = Task(title: titleTextField.stringValue, description: descriptionTextField.stringValue)
+        tasks.append(temp)
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.popover.contentViewController = CheckitViewController(for: tasks)
     }
     
 }

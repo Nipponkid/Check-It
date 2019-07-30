@@ -43,6 +43,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="createNewTask:" target="-2" id="yLw-CA-NC1"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="139" y="78.5"/>

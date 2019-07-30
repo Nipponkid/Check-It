@@ -109,7 +109,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="createTask:" target="-2" id="g99-ha-0RQ"/>
+                        <action selector="promptForNewTask:" target="-2" id="t7N-mj-FEa"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-Uj-9tV" userLabel="ExitButton">

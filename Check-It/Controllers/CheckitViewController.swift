@@ -15,9 +15,7 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     @IBOutlet weak var list: NSTableColumn!
     @IBOutlet weak var table: NSTableView!
     
-    var tasks: [Task] = [
-        Task(title: "First Task", description: "Yes really, the first one.")
-    ]
+    var tasks: [Task]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +23,17 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
         table.delegate = self
         table.dataSource = self
     }
+    
+    init(for tasks: [Task]) {
+        self.tasks = tasks
+        super.init(nibName: "CheckitViewController", bundle: nil)
+    }
+    
+    required init?(coder aCoder: NSCoder) {
+        self.tasks = []
+        super.init(coder: aCoder)
+    }
+
     
     // MARK: - NSTableViewDataSource
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -60,14 +69,9 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
         NSApp.terminate(sender)
     }
     
-    @IBAction func createTask(_ sender: Any?) {
-        let temp = Task(title: "Testing Me! : \(tasks.count)", description: "This is a test thing")
-        
+    @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = NewTaskViewController()
-        
-        tasks.append(temp);
-        table.reloadData()
+        appDelegate.popover.contentViewController = NewTaskViewController(for: tasks)
     }
     
 }
