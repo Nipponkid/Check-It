@@ -19,7 +19,6 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
         Task(title: "First Task", description: "Yes really, the first one.")
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View Controller Loaded!")
@@ -63,6 +62,9 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func createTask(_ sender: Any?) {
         let temp = Task(title: "Testing Me! : \(tasks.count)", description: "This is a test thing")
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.popover.contentViewController = NewTaskViewController()
         
         tasks.append(temp);
         table.reloadData()
