@@ -14,16 +14,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
     
-    var tasks: [Task] = [
+    var uncompletedTasks: [Task] = [
         Task(title: "First Task", description: "Yes really, the first one.")
     ]
+    
+    var completedTasks: [Task] = []
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(toggleMenuBarWindow(_:))
         }
-        popover.contentViewController = CheckitViewController(for: tasks)
+        popover.contentViewController = CheckitViewController(for: uncompletedTasks)
         popover.behavior = NSPopover.Behavior.transient;
     }
     

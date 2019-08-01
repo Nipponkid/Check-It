@@ -371,7 +371,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W6Y5Q44XNS;
+				DEVELOPMENT_TEAM = FPVT6LW728;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,7 +390,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W6Y5Q44XNS;
+				DEVELOPMENT_TEAM = FPVT6LW728;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
