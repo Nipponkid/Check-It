@@ -13,16 +13,19 @@ class NewTaskViewController: NSViewController {
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var descriptionTextField: NSTextField!
     
-    var tasks: [Task]
+    var uncompletedTasks: [Task]
+    var completedTasks: [Task]
     
     init(for tasks: [Task]) {
-        self.tasks = tasks
+        self.uncompletedTasks = tasks
+        self.completedTasks = []
         print(tasks)
         super.init(nibName: "NewTaskViewController", bundle: nil)
     }
     
     required init?(coder aCoder: NSCoder) {
-        self.tasks = []
+        self.uncompletedTasks = []
+        self.completedTasks = []
         super.init(coder: aCoder)
     }
 
@@ -34,9 +37,9 @@ class NewTaskViewController: NSViewController {
     @IBAction func createNewTask(_ sender: Any?) {
         let temp = Task(title: titleTextField.stringValue, description: descriptionTextField.stringValue)
         if temp.title != "" {
-            tasks.append(temp)
+            uncompletedTasks.append(temp)
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.popover.contentViewController = CheckitViewController(for: tasks)
+            appDelegate.popover.contentViewController = CheckitViewController(forUncompleted: uncompletedTasks, forCompleted: completedTasks)
         }
     }
     
