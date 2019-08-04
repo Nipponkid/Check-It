@@ -14,6 +14,7 @@
 		AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07438422AED78200C17649 /* CheckitViewController.swift */; };
 		AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438622AED84300C17649 /* CheckitViewController.xib */; };
 		AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438822AED8ED00C17649 /* MainMenu.xib */; };
+		AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42212E22F77FF20079CF93 /* TaskListController.swift */; };
 		ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */; };
 		ADD301C122AF1E2B00754E5B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD301C022AF1E2A00754E5B /* Task.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		AD07438422AED78200C17649 /* CheckitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckitViewController.swift; sourceTree = "<group>"; };
 		AD07438622AED84300C17649 /* CheckitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckitViewController.xib; sourceTree = "<group>"; };
 		AD07438822AED8ED00C17649 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		AD42212E22F77FF20079CF93 /* TaskListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
 		ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCellView.swift; sourceTree = "<group>"; };
 		ADD301C022AF1E2A00754E5B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 				1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */,
 				AD07438422AED78200C17649 /* CheckitViewController.swift */,
 				1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */,
+				AD42212E22F77FF20079CF93 /* TaskListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */,
 				1BF94C6E22EF8896008B452B /* NewTaskViewController.swift in Sources */,
+				AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */,
 				AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */,
 				ADD301C122AF1E2B00754E5B /* Task.swift in Sources */,
 				1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */,

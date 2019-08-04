@@ -13,20 +13,15 @@ class NewTaskViewController: NSViewController {
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var descriptionTextField: NSTextField!
     
-    var uncompletedTasks: [Task]
-    var completedTasks: [Task]
+    var taskController: TaskListController
     
-    init(for tasks: [Task]) {
-        self.uncompletedTasks = tasks
-        self.completedTasks = []
-        print(tasks)
+    init(for controller: TaskListController) {
+        self.taskController = controller
         super.init(nibName: "NewTaskViewController", bundle: nil)
     }
     
     required init?(coder aCoder: NSCoder) {
-        self.uncompletedTasks = []
-        self.completedTasks = []
-        super.init(coder: aCoder)
+        fatalError("[init?(coder)]: Has not been initialized.")
     }
 
     override func viewDidLoad() {
@@ -37,9 +32,9 @@ class NewTaskViewController: NSViewController {
     @IBAction func createNewTask(_ sender: Any?) {
         let temp = Task(title: titleTextField.stringValue, description: descriptionTextField.stringValue)
         if temp.title != "" {
-            uncompletedTasks.append(temp)
+            taskController.add(task: temp)
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.popover.contentViewController = CheckitViewController(forUncompleted: uncompletedTasks, forCompleted: completedTasks)
+            appDelegate.popover.contentViewController = CheckitViewController(with: taskController)
         }
     }
     

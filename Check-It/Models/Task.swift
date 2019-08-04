@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Task {
+struct Task: Equatable {
     var title: String
     var description: String?
     var isComplete: Bool = false
@@ -16,5 +16,9 @@ struct Task {
     init(title: String, description: String?) {
         self.title = title
         self.description = description
+    }
+    
+    static func ==(lhs: Task, rhs: Task) -> Bool {
+        return (lhs.title == rhs.title) && (lhs.description == rhs.description)
     }
 }

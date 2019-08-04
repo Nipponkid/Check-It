@@ -15,8 +15,7 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     @IBOutlet weak var list: NSTableColumn!
     @IBOutlet weak var table: NSTableView!
     
-    var uncompletedTasks: [Task]
-    var completedTasks: [Task]
+    var taskListController: TaskListController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,32 +24,29 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
         table.dataSource = self
     }
     
-    init(forUncompleted uncompleted: [Task], forCompleted completed: [Task]) {
-        self.uncompletedTasks = uncompleted
-        self.completedTasks = completed
+    init(with taskListController: TaskListController) {
+        self.taskListController = taskListController
         super.init(nibName: "CheckitViewController", bundle: nil)
     }
     
     required init?(coder aCoder: NSCoder) {
-        self.uncompletedTasks = []
-        self.completedTasks = []
-        super.init(coder: aCoder)
+        fatalError("[init?(coder)]: Has not been initialized.")
     }
 
     
     // MARK: - NSTableViewDataSource
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return uncompletedTasks.count
+        return taskListController.numUncompleted()
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("TodoTask"), owner: self) as? TaskTableCellView {
             if let titleField = cell.taskTitleTextField {
-                titleField.stringValue = uncompletedTasks[row].title
+                titleField.stringValue = taskListController.getUncomplted(taskNumber: row).title
             }
             if let descriptionField = cell.taskDescriptionTextField {
-                if let descriptionRaw = uncompletedTasks[row].description {
+                if let descriptionRaw = taskListController.getUncomplted(taskNumber: row).description {
                     descriptionField.stringValue = descriptionRaw
                 }
             }
@@ -62,12 +58,9 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func completeTask(_ sender: Any?) {
         let selected = table.row(for: sender as! NSView)
-        print("Task \(uncompletedTasks[selected].title) Complete")
-        uncompletedTasks[selected].isComplete = true
-        completedTasks.append(uncompletedTasks[selected])
-        uncompletedTasks.remove(at: selected)
+        print("Task \(taskListController.getUncomplted(taskNumber: selected).title) Complete")
+        taskListController.completeTask(taskNumber: selected)
         table.reloadData()
-        print(completedTasks)
     }
     
     @IBAction func closeProgram(_ sender: Any?) {
@@ -76,7 +69,7 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = NewTaskViewController(for: uncompletedTasks)
+        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController)
     }
     
 }

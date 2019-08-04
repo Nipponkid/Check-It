@@ -13,19 +13,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
-    
-    var uncompletedTasks: [Task] = [
-        Task(title: "First Task", description: "Yes really, the first one.")
-    ]
-    
-    var completedTasks: [Task] = []
+    let taskListController: TaskListController = TaskListController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(toggleMenuBarWindow(_:))
         }
-        popover.contentViewController = CheckitViewController(forUncompleted: uncompletedTasks, forCompleted: completedTasks)
+        popover.contentViewController = CheckitViewController(with: taskListController)
         popover.behavior = NSPopover.Behavior.transient;
     }
     
@@ -37,19 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             }
         }
-    }
-    
-    @objc func displayTodoItems(_ sender: Any?) {
-        print("DISPLAYING!")
-    }
-
-    func constructMenu() {
-        let menu = NSMenu()
-        
-        menu.addItem(NSMenuItem(title: "Show All To-Do Items", action: #selector(AppDelegate.displayTodoItems(_:)), keyEquivalent: "w"))
-        menu.addItem(NSMenuItem(title: "Quit Application", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        
-        statusItem.menu = menu
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
