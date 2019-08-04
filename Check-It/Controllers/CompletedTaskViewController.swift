@@ -52,6 +52,11 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
         return nil
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        table.reloadData()
+    }
+    
     @IBAction func closeProgram(_ sender: Any?) {
         NSApp.terminate(sender)
     }

@@ -54,6 +54,11 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         return nil
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        table.reloadData()
+    }
+    
     @IBAction func completeTask(_ sender: Any?) {
         let selected = table.row(for: sender as! NSView)
         print("Task \(taskListController.getUncompleted(taskNumber: selected).title) Complete")
