@@ -11,10 +11,12 @@
 		1BF94C6F22EF8896008B452B /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */; };
 		1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */; };
 		1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFF77B622A5C4E200E0E20B /* Assets.xcassets */; };
-		AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07438422AED78200C17649 /* CheckitViewController.swift */; };
-		AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438622AED84300C17649 /* CheckitViewController.xib */; };
+		AD07438522AED78200C17649 /* UncompletedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD07438422AED78200C17649 /* UncompletedTaskViewController.swift */; };
+		AD07438722AED84300C17649 /* UncompleteTasktViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438622AED84300C17649 /* UncompleteTasktViewController.xib */; };
 		AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD07438822AED8ED00C17649 /* MainMenu.xib */; };
 		AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42212E22F77FF20079CF93 /* TaskListController.swift */; };
+		AD42213222F78E760079CF93 /* CompletedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */; };
+		AD42213322F78E760079CF93 /* CompletedTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */; };
 		ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */; };
 		ADD301C122AF1E2B00754E5B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD301C022AF1E2A00754E5B /* Task.swift */; };
 /* End PBXBuildFile section */
@@ -38,10 +40,12 @@
 		1BFF77BB22A5C4E200E0E20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Check_It.entitlements; sourceTree = "<group>"; };
 		1BFF780522AB269100E0E20B /* Check-ItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check-ItTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD07438422AED78200C17649 /* CheckitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckitViewController.swift; sourceTree = "<group>"; };
-		AD07438622AED84300C17649 /* CheckitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckitViewController.xib; sourceTree = "<group>"; };
+		AD07438422AED78200C17649 /* UncompletedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompletedTaskViewController.swift; sourceTree = "<group>"; };
+		AD07438622AED84300C17649 /* UncompleteTasktViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UncompleteTasktViewController.xib; sourceTree = "<group>"; };
 		AD07438822AED8ED00C17649 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		AD42212E22F77FF20079CF93 /* TaskListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
+		AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTaskViewController.swift; sourceTree = "<group>"; };
+		AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedTaskViewController.xib; sourceTree = "<group>"; };
 		ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCellView.swift; sourceTree = "<group>"; };
 		ADD301C022AF1E2A00754E5B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,10 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				AD07438822AED8ED00C17649 /* MainMenu.xib */,
-				AD07438622AED84300C17649 /* CheckitViewController.xib */,
+				AD07438622AED84300C17649 /* UncompleteTasktViewController.xib */,
+				AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */,
 				1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */,
 				1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */,
-				AD07438422AED78200C17649 /* CheckitViewController.swift */,
+				AD07438422AED78200C17649 /* UncompletedTaskViewController.swift */,
+				AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */,
 				1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */,
 				AD42212E22F77FF20079CF93 /* TaskListController.swift */,
 			);
@@ -205,7 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD07438722AED84300C17649 /* CheckitViewController.xib in Resources */,
+				AD07438722AED84300C17649 /* UncompleteTasktViewController.xib in Resources */,
+				AD42213322F78E760079CF93 /* CompletedTaskViewController.xib in Resources */,
 				1BFF77B722A5C4E200E0E20B /* Assets.xcassets in Resources */,
 				AD07438922AED8ED00C17649 /* MainMenu.xib in Resources */,
 				1BF94C6F22EF8896008B452B /* NewTaskViewController.xib in Resources */,
@@ -229,7 +236,8 @@
 				ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */,
 				1BF94C6E22EF8896008B452B /* NewTaskViewController.swift in Sources */,
 				AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */,
-				AD07438522AED78200C17649 /* CheckitViewController.swift in Sources */,
+				AD07438522AED78200C17649 /* UncompletedTaskViewController.swift in Sources */,
+				AD42213222F78E760079CF93 /* CompletedTaskViewController.swift in Sources */,
 				ADD301C122AF1E2B00754E5B /* Task.swift in Sources */,
 				1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */,
 			);

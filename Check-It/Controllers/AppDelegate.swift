@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(toggleMenuBarWindow(_:))
         }
-        popover.contentViewController = CheckitViewController(with: taskListController)
+        popover.contentViewController = UncompletedTaskViewController(with: taskListController)
         popover.behavior = NSPopover.Behavior.transient;
     }
     

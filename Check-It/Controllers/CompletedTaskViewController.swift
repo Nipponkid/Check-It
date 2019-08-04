@@ -1,52 +1,48 @@
 //
-//  CheckitViewController.swift
+//  CompletedTaskController.swift
 //  Check-It
 //
-//  Created by Brandon Marella on 6/10/19.
+//  Created by Brandon Marella on 8/4/19.
 //  Copyright © 2019 Allegory. All rights reserved.
 //
 
 import Cocoa
 
-class CheckitViewController: NSViewController, NSTableViewDataSource,
+class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
                                 NSTableViewDelegate {
 
-    @IBOutlet weak var button: NSButton!
-    @IBOutlet weak var list: NSTableColumn!
     @IBOutlet weak var table: NSTableView!
     
-    var taskListController: TaskListController
+    let taskListController: TaskListController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Controller Loaded!")
         table.delegate = self
         table.dataSource = self
     }
     
-    init(with taskListController: TaskListController) {
-        self.taskListController = taskListController
-        super.init(nibName: "CheckitViewController", bundle: nil)
+    init(with: TaskListController) {
+        self.taskListController = with
+        super.init(nibName: "CompletedTaskViewController", bundle: nil)
     }
     
     required init?(coder aCoder: NSCoder) {
         fatalError("[init?(coder)]: Has not been initialized.")
     }
-
     
     // MARK: - NSTableViewDataSource
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return taskListController.numUncompleted()
+        return taskListController.numCompleted()
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("TodoTask"), owner: self) as? TaskTableCellView {
+        if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("CompletedTodoTask"), owner: self) as? TaskTableCellView {
             if let titleField = cell.taskTitleTextField {
-                titleField.stringValue = taskListController.getUncomplted(taskNumber: row).title
+                titleField.stringValue = taskListController.getCompleted(taskNumber: row).title
             }
             if let descriptionField = cell.taskDescriptionTextField {
-                if let descriptionRaw = taskListController.getUncomplted(taskNumber: row).description {
+                if let descriptionRaw = taskListController.getCompleted(taskNumber: row).description {
                     descriptionField.stringValue = descriptionRaw
                 }
             }
@@ -54,13 +50,6 @@ class CheckitViewController: NSViewController, NSTableViewDataSource,
             return cell
         }
         return nil
-    }
-    
-    @IBAction func completeTask(_ sender: Any?) {
-        let selected = table.row(for: sender as! NSView)
-        print("Task \(taskListController.getUncomplted(taskNumber: selected).title) Complete")
-        taskListController.completeTask(taskNumber: selected)
-        table.reloadData()
     }
     
     @IBAction func closeProgram(_ sender: Any?) {

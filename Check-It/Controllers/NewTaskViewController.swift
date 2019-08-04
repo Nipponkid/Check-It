@@ -34,7 +34,7 @@ class NewTaskViewController: NSViewController {
         if temp.title != "" {
             taskController.add(task: temp)
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.popover.contentViewController = CheckitViewController(with: taskController)
+            appDelegate.popover.contentViewController = UncompletedTaskViewController(with: taskController)
         }
     }
     
