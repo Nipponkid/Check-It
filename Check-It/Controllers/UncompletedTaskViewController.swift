@@ -17,7 +17,6 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Controller Loaded!")
         table.delegate = self
         table.dataSource = self
     }
@@ -61,7 +60,6 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func completeTask(_ sender: Any?) {
         let selected = table.row(for: sender as! NSView)
-        print("Task \(taskListController.getUncompleted(taskNumber: selected).title) Complete")
         taskListController.completeTask(taskNumber: selected)
         table.reloadData()
     }
