@@ -61,6 +61,13 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
         NSApp.terminate(sender)
     }
     
+    @IBAction func deleteTask(_ sender: Any?) {
+        let selected = table.row(for: sender as! NSView)
+        let task = taskListController.getCompleted(taskNumber: selected)
+        taskListController.remove(completed: task)
+        table.reloadData()
+    }
+    
     @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController)

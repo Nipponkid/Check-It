@@ -49,4 +49,10 @@ class TaskListController {
             uncompletedTasks.remove(at: index)
         }
     }
+    
+    func remove(completed task: Task) {
+        if let index = completedTasks.firstIndex(of: task) {
+            completedTasks.remove(at: index)
+        }
+    }
 }
