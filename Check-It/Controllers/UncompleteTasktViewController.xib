@@ -63,7 +63,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGV-5S-C8I">
-                                                        <rect key="frame" x="-3" y="6" width="54" height="32"/>
+                                                        <rect key="frame" x="-3" y="17" width="54" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="push" title="Fin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="M16-g3-T2x">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -71,6 +71,17 @@
                                                         </buttonCell>
                                                         <connections>
                                                             <action selector="completeTask:" target="-2" id="hGp-5h-6BM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvd-me-cI0">
+                                                        <rect key="frame" x="-6" y="-5" width="60" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Del" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qhy-oX-lq6">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="deleteTask:" target="-2" id="rU8-6i-jhk"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

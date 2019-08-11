@@ -43,4 +43,10 @@ class TaskListController {
     func add(task: Task) {
         uncompletedTasks.append(task)
     }
+    
+    func remove(uncompleted task: Task) {
+        if let index = uncompletedTasks.firstIndex(of: task) {
+            uncompletedTasks.remove(at: index)
+        }
+    }
 }

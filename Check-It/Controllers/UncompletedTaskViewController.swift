@@ -66,6 +66,13 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         table.reloadData()
     }
     
+    @IBAction func deleteTask(_ sender: Any?) {
+        let selected = table.row(for: sender as! NSView)
+        let task = taskListController.getUncompleted(taskNumber: selected)
+        taskListController.remove(uncompleted: task)
+        table.reloadData()
+    }
+    
     @IBAction func closeProgram(_ sender: Any?) {
         NSApp.terminate(sender)
     }
