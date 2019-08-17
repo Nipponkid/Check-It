@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let taskListController: TaskListController = TaskListController()
     // Temporary placeholder for getting the height of the tabs in the TabViewController
     let TAB_BAR_SIZE: CGFloat = 27
+    
+    var tasks: [NSManagedObject] = []
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
@@ -23,6 +25,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = #selector(toggleMenuBarWindow(_:))
         }
         createTabView()
+    }
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "TaskModel")
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                fatalError("Unable to load persistent stores: \(error)")
+            }
+        }
+        return container
+    }()
+    
+    func saveTask() {
+        let context = self.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Task_Entity", in: context)!
+        let task = NSManagedObject(entity: entity, insertInto: context)
+        task.setValue("Random Name", forKey: "task_title")
+        task.setValue("Random Description", forKey: "task_description")
+        do {
+            try context.save()
+            tasks.append(task)
+        } catch _ as NSError {
+            print("Ruh Roh Raggy: ")
+        }
+        
     }
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {

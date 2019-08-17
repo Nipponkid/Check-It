@@ -35,6 +35,7 @@ class NewTaskViewController: NSViewController {
             taskController.add(task: temp)
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.createTabView()
+            appDelegate.saveTask()
         }
     }
     

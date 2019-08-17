@@ -55,6 +55,20 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task_Entity")
+        
+        do {
+            let objects = try context.fetch(fetchRequest)
+            for object in objects {
+                print("\(object.value(forKey: "task_title")!) - \(object.value(forKey: "task_description")!)")
+            }
+        } catch _ as NSError {
+            print("Raggy, i ran't retch it!")
+        }
+        
         table.reloadData()
     }
     
