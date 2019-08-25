@@ -39,10 +39,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func saveTask() {
         let context = self.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Task_Entity", in: context)!
+        let entity = NSEntityDescription.entity(forEntityName: "Task", in: context)!
+        
         let task = NSManagedObject(entity: entity, insertInto: context)
-        task.setValue("Random Name", forKey: "task_title")
-        task.setValue("Random Description", forKey: "task_description")
+        task.setValue("Random Name", forKey: "title")
+        task.setValue("Random Description", forKey: "taskDescription")
+        
         do {
             try context.save()
             tasks.append(task)

@@ -38,14 +38,12 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("UncompletedTodoTask"), owner: self) as? TaskTableCellView {
+         if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("UncompletedTodoTask"), owner: self) as? TaskTableCellView {
             if let titleField = cell.taskTitleTextField {
-                titleField.stringValue = taskListController.getUncompleted(taskNumber: row).title
+                titleField.stringValue = taskListController.getUncompleted(taskNumber: row).title!
             }
             if let descriptionField = cell.taskDescriptionTextField {
-                if let descriptionRaw = taskListController.getUncompleted(taskNumber: row).description {
-                    descriptionField.stringValue = descriptionRaw
-                }
+                descriptionField.stringValue = taskListController.getUncompleted(taskNumber: row).taskDescription!
             }
             
             return cell
@@ -58,12 +56,13 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task_Entity")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
         
         do {
             let objects = try context.fetch(fetchRequest)
             for object in objects {
-                print("\(object.value(forKey: "task_title")!) - \(object.value(forKey: "task_description")!)")
+                print("\(object.value(forKey: "title")!) - \(object.value(forKey: "taskDescription")!)")
+                taskListController.add(task: object as! Task)
             }
         } catch _ as NSError {
             print("Raggy, i ran't retch it!")

@@ -30,10 +30,15 @@ class NewTaskViewController: NSViewController {
     }
     
     @IBAction func createNewTask(_ sender: Any?) {
-        let temp = Task(title: titleTextField.stringValue, description: descriptionTextField.stringValue)
-        if temp.title != "" {
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        
+        if titleTextField.stringValue != "" {
+            let temp = NSEntityDescription.insertNewObject(forEntityName: "Task", into: appDelegate.persistentContainer.viewContext) as! Task
+            temp.title = titleTextField.stringValue
+            temp.taskDescription = descriptionTextField.stringValue
+            
             taskController.add(task: temp)
-            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            
             appDelegate.createTabView()
             appDelegate.saveTask()
         }

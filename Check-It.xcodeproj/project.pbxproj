@@ -19,7 +19,6 @@
 		AD42213322F78E760079CF93 /* CompletedTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */; };
 		ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */; };
 		ADAD8BC62308927100484D4E /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8BC42308927100484D4E /* TaskModel.xcdatamodeld */; };
-		ADD301C122AF1E2B00754E5B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD301C022AF1E2A00754E5B /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedTaskViewController.xib; sourceTree = "<group>"; };
 		ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCellView.swift; sourceTree = "<group>"; };
 		ADAD8BC52308927100484D4E /* TaskModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModel.xcdatamodel; sourceTree = "<group>"; };
-		ADD301C022AF1E2A00754E5B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 		1BF94C7122EF88BF008B452B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ADD301C022AF1E2A00754E5B /* Task.swift */,
 				ADAD8BC42308927100484D4E /* TaskModel.xcdatamodeld */,
 			);
 			path = Models;
@@ -242,7 +239,6 @@
 				AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */,
 				AD07438522AED78200C17649 /* UncompletedTaskViewController.swift in Sources */,
 				AD42213222F78E760079CF93 /* CompletedTaskViewController.swift in Sources */,
-				ADD301C122AF1E2B00754E5B /* Task.swift in Sources */,
 				1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +383,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FPVT6LW728;
+				DEVELOPMENT_TEAM = W6Y5Q44XNS;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,7 +402,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FPVT6LW728;
+				DEVELOPMENT_TEAM = W6Y5Q44XNS;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -9,8 +9,8 @@
 import Foundation
 
 class TaskListController {
-    private var uncompletedTasks: [Task] = []
-    private var completedTasks: [Task] = []
+    var uncompletedTasks: [Task] = []
+    var completedTasks: [Task] = []
     
     private func completeTask(task: Task) {
         if let index = uncompletedTasks.firstIndex(of: task) {

@@ -39,12 +39,10 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
         
         if let cell:TaskTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("CompletedTodoTask"), owner: self) as? TaskTableCellView {
             if let titleField = cell.taskTitleTextField {
-                titleField.stringValue = taskListController.getCompleted(taskNumber: row).title
+                titleField.stringValue = taskListController.getCompleted(taskNumber: row).title!
             }
             if let descriptionField = cell.taskDescriptionTextField {
-                if let descriptionRaw = taskListController.getCompleted(taskNumber: row).description {
-                    descriptionField.stringValue = descriptionRaw
-                }
+                descriptionField.stringValue = taskListController.getCompleted(taskNumber: row).taskDescription!
             }
             
             return cell
