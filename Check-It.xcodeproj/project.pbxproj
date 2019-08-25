@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B5DE635231314CC00E1D7BB /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B5DE633231314CC00E1D7BB /* TaskModel.xcdatamodeld */; };
 		1BF94C6E22EF8896008B452B /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */; };
 		1BF94C6F22EF8896008B452B /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */; };
 		1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */; };
@@ -18,7 +19,6 @@
 		AD42213222F78E760079CF93 /* CompletedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */; };
 		AD42213322F78E760079CF93 /* CompletedTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */; };
 		ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */; };
-		ADAD8BC62308927100484D4E /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADAD8BC42308927100484D4E /* TaskModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B5DE634231314CC00E1D7BB /* TaskModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModel.xcdatamodel; sourceTree = "<group>"; };
 		1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
 		1BFF77B122A5C4E000E0E20B /* Check-It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check-It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +48,6 @@
 		AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTaskViewController.swift; sourceTree = "<group>"; };
 		AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedTaskViewController.xib; sourceTree = "<group>"; };
 		ADA8328622C6E5C300DDBE6F /* TaskTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableCellView.swift; sourceTree = "<group>"; };
-		ADAD8BC52308927100484D4E /* TaskModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		1BF94C7122EF88BF008B452B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ADAD8BC42308927100484D4E /* TaskModel.xcdatamodeld */,
+				1B5DE633231314CC00E1D7BB /* TaskModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,9 +235,9 @@
 			files = (
 				ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */,
 				1BF94C6E22EF8896008B452B /* NewTaskViewController.swift in Sources */,
-				ADAD8BC62308927100484D4E /* TaskModel.xcdatamodeld in Sources */,
 				AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */,
 				AD07438522AED78200C17649 /* UncompletedTaskViewController.swift in Sources */,
+				1B5DE635231314CC00E1D7BB /* TaskModel.xcdatamodeld in Sources */,
 				AD42213222F78E760079CF93 /* CompletedTaskViewController.swift in Sources */,
 				1BFF77B522A5C4E000E0E20B /* AppDelegate.swift in Sources */,
 			);
@@ -487,12 +487,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		ADAD8BC42308927100484D4E /* TaskModel.xcdatamodeld */ = {
+		1B5DE633231314CC00E1D7BB /* TaskModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				ADAD8BC52308927100484D4E /* TaskModel.xcdatamodel */,
+				1B5DE634231314CC00E1D7BB /* TaskModel.xcdatamodel */,
 			);
-			currentVersion = ADAD8BC52308927100484D4E /* TaskModel.xcdatamodel */;
+			currentVersion = 1B5DE634231314CC00E1D7BB /* TaskModel.xcdatamodel */;
 			path = TaskModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

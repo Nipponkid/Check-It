@@ -4,11 +4,7 @@
         <attribute name="taskDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Task_List" representedClassName="Task_List" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="Task" positionX="-45" positionY="0" width="128" height="73"/>
-        <element name="Task_List" positionX="-317.91015625" positionY="-131.80078125" width="128" height="60"/>
+        <element name="Task" positionX="-45" positionY="0" width="128" height="75"/>
     </elements>
 </model>

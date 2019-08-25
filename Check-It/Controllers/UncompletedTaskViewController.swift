@@ -59,6 +59,8 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
         
         do {
+            taskListController.clearUncompleted()
+            
             let objects = try context.fetch(fetchRequest)
             for object in objects {
                 print("\(object.value(forKey: "title")!) - \(object.value(forKey: "taskDescription")!)")

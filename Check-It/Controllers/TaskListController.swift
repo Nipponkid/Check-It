@@ -53,4 +53,8 @@ class TaskListController {
             completedTasks.remove(at: index)
         }
     }
+    
+    func clearUncompleted() {
+        uncompletedTasks = []
+    }
 }
