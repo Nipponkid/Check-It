@@ -40,7 +40,7 @@ class NewTaskViewController: NSViewController {
             taskController.add(task: temp)
             
             appDelegate.createTabView()
-            appDelegate.saveTask()
+            appDelegate.save()
         }
     }
     

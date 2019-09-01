@@ -37,13 +37,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return container
     }()
     
-    func saveTask() {
+    func save() {
         let context = self.persistentContainer.viewContext
         do {
             try context.save()
         } catch _ as NSError {
             print("Error saving tasks")
         }
+    }
+    
+    func delete(task: Task) {
+        let context = self.persistentContainer.viewContext
+        context.delete(task)
+        save() // Deletions will not persist unless saved
     }
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {
