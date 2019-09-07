@@ -27,8 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         createTabView()
     }
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "TaskModel")
+    lazy var persistentContainer: PersistentContainer = {
+        let container = PersistentContainer(name: "TaskModel")
         container.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("Unable to load persistent stores: \(error)")
@@ -36,21 +36,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return container
     }()
-    
-    func save() {
-        let context = self.persistentContainer.viewContext
-        do {
-            try context.save()
-        } catch _ as NSError {
-            print("Error saving tasks")
-        }
-    }
-    
-    func delete(task: Task) {
-        let context = self.persistentContainer.viewContext
-        context.delete(task)
-        save() // Deletions will not persist unless saved
-    }
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {
         if let button = statusItem.button {
@@ -64,8 +49,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func createTabView() {
         let tabViewController = NSTabViewController()
-        let completedTaskViewController = CompletedTaskViewController(with: taskListController)
-        let uncompletedTaskViewController = UncompletedTaskViewController(with: taskListController)
+        let completedTaskViewController = CompletedTaskViewController(for: taskListController, with: persistentContainer)
+        let uncompletedTaskViewController = UncompletedTaskViewController(for: taskListController, with: persistentContainer)
         
         tabViewController.addChild(uncompletedTaskViewController)
         tabViewController.addChild(completedTaskViewController)

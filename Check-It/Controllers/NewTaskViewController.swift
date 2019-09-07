@@ -10,13 +10,16 @@ import Cocoa
 
 class NewTaskViewController: NSViewController {
     
+    var container: PersistentContainer
+    
     @IBOutlet weak var titleTextField: NSTextField!
     @IBOutlet weak var descriptionTextField: NSTextField!
     
     var taskController: TaskListController
     
-    init(for controller: TaskListController) {
+    init(for controller: TaskListController, with container: PersistentContainer) {
         self.taskController = controller
+        self.container = container
         super.init(nibName: "NewTaskViewController", bundle: nil)
     }
     
@@ -30,18 +33,16 @@ class NewTaskViewController: NSViewController {
     }
     
     @IBAction func createNewTask(_ sender: Any?) {
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        
         if titleTextField.stringValue != "" {
-            let temp = NSEntityDescription.insertNewObject(forEntityName: "Task", into: appDelegate.persistentContainer.viewContext) as! Task
-            temp.title = titleTextField.stringValue
-            temp.taskDescription = descriptionTextField.stringValue
+            let task = NSEntityDescription.insertNewObject(forEntityName: "Task", into: container.viewContext) as! Task
+            task.title = titleTextField.stringValue
+            task.taskDescription = descriptionTextField.stringValue
             
-            taskController.add(task: temp)
+            taskController.add(task: task)
             
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.createTabView()
-            appDelegate.save()
+            container.save()
         }
     }
-    
 }

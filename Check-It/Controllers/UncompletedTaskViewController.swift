@@ -10,6 +10,8 @@ import Cocoa
 
 class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
                                 NSTableViewDelegate {
+    
+    var container: PersistentContainer
 
     @IBOutlet weak var table: NSTableView!
     
@@ -21,8 +23,9 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         table.dataSource = self
     }
     
-    init(with taskListController: TaskListController) {
+    init(for taskListController: TaskListController, with container: PersistentContainer) {
         self.taskListController = taskListController
+        self.container = container
         super.init(nibName: "UncompleteTasktViewController", bundle: nil)
     }
     
@@ -83,8 +86,7 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         let selected = table.row(for: sender as! NSView)
         let task = taskListController.getUncompleted(taskNumber: selected)
         taskListController.remove(uncompleted: task)
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.delete(task: task)
+        container.delete(task: task)
         table.reloadData()
     }
     
@@ -94,7 +96,7 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController)
+        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController, with: container)
     }
     
 }

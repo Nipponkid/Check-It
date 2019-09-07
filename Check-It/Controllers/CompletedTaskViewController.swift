@@ -10,6 +10,8 @@ import Cocoa
 
 class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
                                 NSTableViewDelegate {
+    
+    var container: PersistentContainer
 
     @IBOutlet weak var table: NSTableView!
     
@@ -21,8 +23,9 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
         table.dataSource = self
     }
     
-    init(with: TaskListController) {
-        self.taskListController = with
+    init(for taskListController: TaskListController, with container: PersistentContainer) {
+        self.taskListController = taskListController
+        self.container = container
         super.init(nibName: "CompletedTaskViewController", bundle: nil)
     }
     
@@ -68,7 +71,7 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController)
+        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController, with: container)
     }
     
 }

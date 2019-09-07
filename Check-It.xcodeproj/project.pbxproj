@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4E27B3232436FD002C8D2D /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4E27B2232436FD002C8D2D /* PersistentContainer.swift */; };
 		1B5DE635231314CC00E1D7BB /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B5DE633231314CC00E1D7BB /* TaskModel.xcdatamodeld */; };
 		1BF94C6E22EF8896008B452B /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */; };
 		1BF94C6F22EF8896008B452B /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B4E27B2232436FD002C8D2D /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 		1B5DE634231314CC00E1D7BB /* TaskModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModel.xcdatamodel; sourceTree = "<group>"; };
 		1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */,
 				1BF94C6C22EF8896008B452B /* NewTaskViewController.swift */,
 				AD42212E22F77FF20079CF93 /* TaskListController.swift */,
+				1B4E27B2232436FD002C8D2D /* PersistentContainer.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B4E27B3232436FD002C8D2D /* PersistentContainer.swift in Sources */,
 				ADA8328722C6E5C300DDBE6F /* TaskTableCellView.swift in Sources */,
 				1BF94C6E22EF8896008B452B /* NewTaskViewController.swift in Sources */,
 				AD42212F22F77FF20079CF93 /* TaskListController.swift in Sources */,
@@ -383,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FPVT6LW728;
+				DEVELOPMENT_TEAM = W6Y5Q44XNS;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,7 +406,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Check-It/Check_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FPVT6LW728;
+				DEVELOPMENT_TEAM = W6Y5Q44XNS;
 				INFOPLIST_FILE = "Check-It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
