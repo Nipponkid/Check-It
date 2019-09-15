@@ -10,8 +10,6 @@ import Cocoa
 
 class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
                                 NSTableViewDelegate {
-    
-    var container: PersistentContainer
 
     @IBOutlet weak var table: NSTableView!
     
@@ -23,9 +21,8 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
         table.dataSource = self
     }
     
-    init(for taskListController: TaskListController, with container: PersistentContainer) {
+    init(for taskListController: TaskListController) {
         self.taskListController = taskListController
-        self.container = container
         super.init(nibName: "CompletedTaskViewController", bundle: nil)
     }
     
@@ -56,20 +53,6 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
-        
-        do {
-            taskListController.clearCompleted()
-            
-            let objects = try container.viewContext.fetch(fetchRequest)
-            for object in objects {
-                print("\(object.value(forKey: "title")!) - \(object.value(forKey: "taskDescription")!)")
-                taskListController.add(task: object as! Task)
-            }
-        } catch _ as NSError {
-            print("Raggy, i ran't reatch it!")
-        }
-        
         table.reloadData()
     }
     
@@ -86,7 +69,7 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController, with: container)
+        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController)
     }
     
 }

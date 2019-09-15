@@ -16,8 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let taskListController: TaskListController = TaskListController()
     // Temporary placeholder for getting the height of the tabs in the TabViewController
     let TAB_BAR_SIZE: CGFloat = 27
-    
-    var tasks: [NSManagedObject] = []
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
@@ -26,16 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         createTabView()
     }
-    
-    lazy var persistentContainer: PersistentContainer = {
-        let container = PersistentContainer(name: "TaskModel")
-        container.loadPersistentStores { description, error in
-            if let error = error {
-                fatalError("Unable to load persistent stores: \(error)")
-            }
-        }
-        return container
-    }()
     
     @objc func toggleMenuBarWindow(_ sender: Any?) {
         if let button = statusItem.button {
@@ -49,8 +37,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func createTabView() {
         let tabViewController = NSTabViewController()
-        let completedTaskViewController = CompletedTaskViewController(for: taskListController, with: persistentContainer)
-        let uncompletedTaskViewController = UncompletedTaskViewController(for: taskListController, with: persistentContainer)
+        let completedTaskViewController = CompletedTaskViewController(for: taskListController)
+        let uncompletedTaskViewController = UncompletedTaskViewController(for: taskListController)
         
         tabViewController.addChild(uncompletedTaskViewController)
         tabViewController.addChild(completedTaskViewController)
