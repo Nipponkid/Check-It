@@ -45,4 +45,9 @@ class NewTaskViewController: NSViewController {
             container.save()
         }
     }
+    
+    @IBAction func cancel(_ sender: Any?) {
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.createTabView()
+    }
 }
