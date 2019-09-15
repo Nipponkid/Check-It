@@ -12,9 +12,12 @@ class TaskListController {
     var uncompletedTasks: [Task] = []
     var completedTasks: [Task] = []
     
+    
+    
     private func completeTask(task: Task) {
         if let index = uncompletedTasks.firstIndex(of: task) {
             let completedTask = uncompletedTasks.remove(at: index)
+            completedTask.isCompleted = true
             completedTasks.append(completedTask)
         }
     }
@@ -39,7 +42,11 @@ class TaskListController {
     }
     
     func add(task: Task) {
-        uncompletedTasks.append(task)
+        if (!task.isCompleted) {
+            uncompletedTasks.append(task)
+        } else {
+            completedTasks.append(task)
+        }
     }
     
     func remove(uncompleted task: Task) {
@@ -56,5 +63,8 @@ class TaskListController {
     
     func clearUncompleted() {
         uncompletedTasks = []
+    }
+    func clearCompleted() {
+        completedTasks = []
     }
 }

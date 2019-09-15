@@ -57,14 +57,12 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
         
         do {
             taskListController.clearUncompleted()
             
-            let objects = try context.fetch(fetchRequest)
+            let objects = try container.viewContext.fetch(fetchRequest)
             for object in objects {
                 print("\(object.value(forKey: "title")!) - \(object.value(forKey: "taskDescription")!)")
                 taskListController.add(task: object as! Task)
@@ -79,6 +77,7 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     @IBAction func completeTask(_ sender: Any?) {
         let selected = table.row(for: sender as! NSView)
         taskListController.completeTask(taskNumber: selected)
+        container.save()
         table.reloadData()
     }
     

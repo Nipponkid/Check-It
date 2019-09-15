@@ -55,6 +55,21 @@ class CompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
+        
+        do {
+            taskListController.clearCompleted()
+            
+            let objects = try container.viewContext.fetch(fetchRequest)
+            for object in objects {
+                print("\(object.value(forKey: "title")!) - \(object.value(forKey: "taskDescription")!)")
+                taskListController.add(task: object as! Task)
+            }
+        } catch _ as NSError {
+            print("Raggy, i ran't reatch it!")
+        }
+        
         table.reloadData()
     }
     
