@@ -73,10 +73,7 @@
 		1BF94C7022EF88AC008B452B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD07438822AED8ED00C17649 /* MainMenu.xib */,
-				AD07438622AED84300C17649 /* UncompleteTasktViewController.xib */,
-				AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */,
-				1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */,
+				ADB9C729232DE2D20012898F /* Xib files */,
 				1BFF77B422A5C4E000E0E20B /* AppDelegate.swift */,
 				AD07438422AED78200C17649 /* UncompletedTaskViewController.swift */,
 				AD42213022F78E760079CF93 /* CompletedTaskViewController.swift */,
@@ -131,6 +128,17 @@
 				1BFF77BC22A5C4E200E0E20B /* Check_It.entitlements */,
 			);
 			path = "Check-It";
+			sourceTree = "<group>";
+		};
+		ADB9C729232DE2D20012898F /* Xib files */ = {
+			isa = PBXGroup;
+			children = (
+				AD07438822AED8ED00C17649 /* MainMenu.xib */,
+				AD07438622AED84300C17649 /* UncompleteTasktViewController.xib */,
+				AD42213122F78E760079CF93 /* CompletedTaskViewController.xib */,
+				1BF94C6D22EF8896008B452B /* NewTaskViewController.xib */,
+			);
+			path = "Xib files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

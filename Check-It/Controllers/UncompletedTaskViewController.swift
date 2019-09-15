@@ -10,8 +10,6 @@ import Cocoa
 
 class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
                                 NSTableViewDelegate {
-    
-    var container: PersistentContainer
 
     @IBOutlet weak var table: NSTableView!
     
@@ -23,9 +21,8 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         table.dataSource = self
     }
     
-    init(for taskListController: TaskListController, with container: PersistentContainer) {
+    init(for taskListController: TaskListController) {
         self.taskListController = taskListController
-        self.container = container
         super.init(nibName: "UncompleteTasktViewController", bundle: nil)
     }
     
@@ -56,28 +53,12 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
-        
-        do {
-            taskListController.clearUncompleted()
-            
-            let objects = try container.viewContext.fetch(fetchRequest)
-            for object in objects {
-                print("\(object.value(forKey: "title")!) - \(object.value(forKey: "taskDescription")!)")
-                taskListController.add(task: object as! Task)
-            }
-        } catch _ as NSError {
-            print("Raggy, i ran't retch it!")
-        }
-        
         table.reloadData()
     }
     
     @IBAction func completeTask(_ sender: Any?) {
         let selected = table.row(for: sender as! NSView)
         taskListController.completeTask(taskNumber: selected)
-        container.save()
         table.reloadData()
     }
     
@@ -85,7 +66,6 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
         let selected = table.row(for: sender as! NSView)
         let task = taskListController.getUncompleted(taskNumber: selected)
         taskListController.remove(uncompleted: task)
-        container.delete(task: task)
         table.reloadData()
     }
     
@@ -95,7 +75,7 @@ class UncompletedTaskViewController: NSViewController, NSTableViewDataSource,
     
     @IBAction func promptForNewTask(_ sender: Any?) {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController, with: container)
+        appDelegate.popover.contentViewController = NewTaskViewController(for: taskListController)
     }
     
 }

@@ -6,24 +6,47 @@
 //  Copyright © 2019 Allegory. All rights reserved.
 //
 
-import Foundation
+import CoreData
 
 class TaskListController {
     var uncompletedTasks: [Task] = []
     var completedTasks: [Task] = []
     
+    init() {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
+        
+        do {
+            
+            let objects = try persistentContainer.viewContext.fetch(fetchRequest)
+            for object in objects {
+                self.add(task: object as! Task)
+            }
+        } catch _ as NSError {
+            print("Raggy, i ran't reatch it!")
+        }
+        
+    }
     
+    lazy var persistentContainer: PersistentContainer = {
+        let container = PersistentContainer(name: "TaskModel")
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                fatalError("Unable to load persistent stores: \(error)")
+            }
+        }
+        
+        
+        return container
+    }()
     
-    private func completeTask(task: Task) {
+    func completeTask(taskNumber: Int) {
+        let task = uncompletedTasks[taskNumber]
         if let index = uncompletedTasks.firstIndex(of: task) {
             let completedTask = uncompletedTasks.remove(at: index)
             completedTask.isCompleted = true
             completedTasks.append(completedTask)
         }
-    }
-    
-    func completeTask(taskNumber: Int) {
-        completeTask(task: uncompletedTasks[taskNumber])
+        persistentContainer.save()
     }
     
     func numCompleted() -> Int {
@@ -52,13 +75,24 @@ class TaskListController {
     func remove(uncompleted task: Task) {
         if let index = uncompletedTasks.firstIndex(of: task) {
             uncompletedTasks.remove(at: index)
+            persistentContainer.delete(task: task)
         }
     }
     
     func remove(completed task: Task) {
         if let index = completedTasks.firstIndex(of: task) {
             completedTasks.remove(at: index)
+            persistentContainer.delete(task: task)
         }
+    }
+    
+    func createTask(withTitle title: String, withDescription description: String) {
+        let task = NSEntityDescription.insertNewObject(forEntityName: "Task", into: persistentContainer.viewContext) as! Task
+        task.title = title
+        task.taskDescription = description
+        
+        self.add(task: task)
+        persistentContainer.save()
     }
     
     func clearUncompleted() {
