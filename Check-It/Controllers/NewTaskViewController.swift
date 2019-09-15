@@ -43,6 +43,8 @@ class NewTaskViewController: NSViewController {
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.createTabView()
             container.save()
+        } else {
+            titleTextField.backgroundColor = NSColor.red
         }
     }
     
